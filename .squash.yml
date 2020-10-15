@@ -3,6 +3,7 @@ deployments:
     ready_wait: 20  
     dockerimage: python:3.6.1-onbuild
     install:
+      - pip install -r requirements.txt
       - python server.py
     port_forwarding: 80:3000
     run_options: --env SQUASH_CUSTOM_VAR1="${SQUASH_CUSTOM_VAR1}"
