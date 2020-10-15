@@ -1,8 +1,11 @@
 deployments:
   MyApp:
-    filename: Dockerfile
-    ready_wait: 20
-    auto_deploy_on_commits: True
+    ready_wait: 20  
+    dockerimage: ubuntu
+    install:
+      - apt-get update && apt-get install python-pip
+      - pip install -r ~/code/requirements.txt
+      - python ~/code/server.py
     port_forwarding: 80:3000
     run_options: --env SQUASH_CUSTOM_VAR1="${SQUASH_CUSTOM_VAR1}"
 
