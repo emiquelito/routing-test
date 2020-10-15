@@ -1,10 +1,11 @@
 deployments:
   MyApp:
     ready_wait: 20  
-    dockerimage: ubuntu
-    install:
-      - apt-get update && apt-get install python-pip
-      - pip install -r ~/code/requirements.txt
+    dockerimage: ubuntu:trusty
+    build_steps:
+      - apt-get update && apt-get -y install python-pip
+      - pip install flask
+    run-steps:
       - python ~/code/server.py
     port_forwarding: 80:3000
     run_options: --env SQUASH_CUSTOM_VAR1="${SQUASH_CUSTOM_VAR1}"
