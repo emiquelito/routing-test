@@ -1,11 +1,12 @@
 from flask import Flask
+import os
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    raise Exception()
-    #return '<body>Hello world. <a href="/about/">About this page</a>.</body>'
+    SQUASH_CUSTOM_VAR1 = os.environ.get('SQUASH_CUSTOM_VAR1')
+    return '<body>Hello world. <a href="/about">About this page</a> - Env Var: %s.</body>' % SQUASH_CUSTOM_VAR1
 
 @app.route('/about')
 def about():
