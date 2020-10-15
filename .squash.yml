@@ -3,4 +3,5 @@ deployments:
     ready_wait: 20
     auto_deploy_on_commits: True
     port_forwarding: 80:3000
+    run_options: --env SQUASH_CUSTOM_VAR1=${SQUASH_CUSTOM_VAR1}
 
