@@ -8,6 +8,6 @@ deployments:
     launch_steps:
       - python /code/server.py
     port_forwarding: 80:3000
-    run_options: --env SQUASH_CUSTOM_VAR1="${SQUASH_CUSTOM_VAR1}"
+    run_options: --env SQUASH_CUSTOM_VAR1="${SQUASH_CUSTOM_VAR1}" -v ~/code:/code
 
 
