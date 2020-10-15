@@ -6,6 +6,7 @@ deployments:
       - apt-get update && apt-get -y install python-pip
       - pip install flask
     launch_steps:
-      - python /code/server.py
+      - cd /code
+      - python server.py
     port_forwarding: 80:3000
     run_options: -v "~/code:/code"
