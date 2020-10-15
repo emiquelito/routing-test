@@ -2,3 +2,5 @@ deployments:
   default:
     ready_wait: 20
     auto_deploy_on_commits: True
+    port_forwarding: 80:3000
+
